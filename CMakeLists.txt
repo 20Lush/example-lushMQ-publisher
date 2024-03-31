@@ -18,7 +18,7 @@ set(CMAKE_BOILERPLATE_PATH ${CMAKE_SOURCE_DIR}/.CMake-Boilerplate)
 include(${CMAKE_BOILERPLATE_PATH}/INSTALLER.cmake)
 include(${CMAKE_BOILERPLATE_PATH}/VARIABLES.cmake)
 
-# We declare where wwe wwant our cmake module stuff to live at build-time
+# We declare where wwe want our cmake module stuff to live at build-time
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_LIST_DIR}/cmake/")
 
 # We add some compile options to make us honest and our code at least a little clean

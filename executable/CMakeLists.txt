@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
 
 # Lets initialize the project for our actual executable
-project(EXECUTABLE_NAME
+project(lushMQPublisher
     VERSION ${PROJECT_VERSION}
-    DESCRIPTION "EXECUTABLE Project"
+    DESCRIPTION "lushMQ Publisher project"
 )
 message(STATUS "Project name: " ${PROJECT_NAME})
 
@@ -34,6 +34,9 @@ target_include_directories(${PROJECT_NAME}
         $<INSTALL_INTERFACE:include>
 )
 
+set(ZeroMQ_DIR ${DEPS_PATH}/zmq/lib/cmake/ZeroMQ)
+find_package(ZeroMQ REQUIRED)
+
 # Put any compile features we'd want in here, like language standards
 target_compile_features(${PROJECT_NAME}
     PUBLIC
@@ -50,7 +53,7 @@ set_target_properties(${PROJECT_NAME}
 # Link the libraries we want, like OpenCV or the cuda toolkit
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        # any dependency library we are linking...
+        libzmq-static
 )
 
 # Send to boilerplate!
