@@ -1,7 +1,7 @@
 
 #include "main.hpp"
 
-#include <zmq.h>
+#include <zmq.hpp>
 
 // Make sure to change the namespace EXECUTABLE to something more specific
 namespace lush::EXECUTABLE {
