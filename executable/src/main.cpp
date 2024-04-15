@@ -1,8 +1,8 @@
 
 #include "main.hpp"
 
-#include <zmq.hpp>
 #include <string>
+#include <zmq.hpp>
 
 // Make sure to change the namespace EXECUTABLE to something more specific
 namespace lush::EXECUTABLE {
@@ -16,7 +16,6 @@ namespace lush::EXECUTABLE {
 			std::cout << argv[idx] << " ";
 		}
 		std::cout << std::endl;
-
 	}
 
 }  // namespace lush::EXECUTABLE
@@ -34,6 +33,4 @@ int main(int argc, char** argv) {
 	mySocket.bind("inproc://test");
 	const std::string_view myMessage = "Hello world!";
 	mySocket.send(zmq::buffer(myMessage), zmq::send_flags::dontwait);
-
-
 }
